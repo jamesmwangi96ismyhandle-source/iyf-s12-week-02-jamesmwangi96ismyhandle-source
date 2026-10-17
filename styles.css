@@ -1,0 +1,228 @@
+/* =================================
+   1. CSS RESET
+================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+/* =================================
+   2. TYPOGRAPHY AND COLOUR VARIABLES
+================================= */
+:root {
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+
+  --text-small: 0.875rem;
+  --text-base: 1rem;
+  --text-large: 1.25rem;
+  --text-heading: 2rem;
+
+  --color-primary: #1d4ed8;
+  --color-primary-dark: #1e40af;
+  --color-text: #1f2937;
+  --color-background: #ffffff;
+  --color-surface: #f3f4f6;
+  --color-border: #d1d5db;
+  --color-focus: #ea580c;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+
+  --content-width: 70rem;
+}
+
+/* =================================
+   3. GENERAL LAYOUT
+================================= */
+.container {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--space-2);
+}
+
+section {
+  padding-block: var(--space-4);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  margin-bottom: var(--space-2);
+}
+
+h1 {
+  font-size: clamp(2rem, 7vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+}
+
+p {
+  margin-bottom: var(--space-2);
+}
+
+a {
+  color: var(--color-primary);
+  text-underline-offset: 0.2em;
+  overflow-wrap: anywhere;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+/* =================================
+   4. FLEXBOX NAVIGATION
+================================= */
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 0.4rem 0.2rem;
+  font-weight: 700;
+}
+
+/* =================================
+   5. PROJECTS GRID
+================================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+}
+
+.project-card {
+  min-width: 0;
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: var(--space-2);
+}
+
+/* =================================
+   6. BUTTONS
+================================= */
+button,
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 0.4rem;
+  background: var(--color-primary);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: #ffffff;
+}
+
+/* =================================
+   7. FOOTER
+================================= */
+.site-footer {
+  margin-top: var(--space-4);
+  padding: var(--space-3);
+  text-align: center;
+  background: var(--color-surface);
+}
+
+/* =================================
+   8. TABLET: 768px AND ABOVE
+================================= */
+@media (min-width: 768px) {
+  .site-nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =================================
+   9. DESKTOP: 1024px AND ABOVE
+================================= */
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
