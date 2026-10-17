@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4 - Football Photo Gallery</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #123456;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #123456;
+            margin-top: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        figure {
+            margin: 0;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        figure img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        figcaption {
+            padding: 12px;
+            text-align: center;
+            color: #333;
+        }
+
+        @media (max-width: 700px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 450px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>James Mwangi</h1>
+        <p>Football Coach and Trainer</p>
+    </header>
+
+    <main>
+        <h2>My Football Photo Gallery</h2>
+
+        <section class="gallery" aria-label="Football photo gallery">
+
+            <figure>
+                <img src="https://https://drive.google.com/file/d/1oL8t4sUB_Nggd5cLuexXEgVlfKfb-S8U/view?usp=drive_linkauto=format&fit=crop&w=600&q=80"
+                     alt="Football pitch">
+                <figcaption>A well-prepared football pitch</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=600&q=80"
+                     alt="Football match">
+                <figcaption>Players competing in a football match</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=600&q=80"
+                     alt="Football training">
+                <figcaption>Football training and skill development</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=600&q=80"
+                     alt="Football player with ball">
+                <figcaption>Improving ball control and technique</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https://images.unsplash.com/photo-1518604666860-9ed391f76460?auto=format&fit=crop&w=600&q=80"
+                     alt="Football team activity">
+                <figcaption>Teamwork and player cooperation</figcaption>
+            </figure>
+
+            <figure>
+                <img src="https:/https://drive.google.com/file/d/1WGBp8FB2cfOyGdDteeZOYfl5AJkho-yJ/view?usp=drive_linkauto=format&fit=crop&w=600&q=80"
+                     alt="Football players on the field">
+                <figcaption>Building confidence through football</figcaption>
+            </figure>
+
+        </section>
+    </main>
+
+</body>
+</html>
